@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "99fe80de-8da6-4dbd-9d02-12681b1d1123",
+		"name": "CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "4736824"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get All Products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/products?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/products/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sku",
+									"value": "MHZVTK",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Ciki coklat",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Ciki coklat yang super enak, hanya di toko klontong kami",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "width",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "length",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "height",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/milmi/Downloads/gilafilmX.png"
+								},
+								{
+									"key": "price",
+									"value": "30000",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:3000/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sku",
+									"value": "MHZVTK",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Ciki keju",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Ciki keju yang super enak, hanya di toko klontong kami",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "width",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "length",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "height",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/milmi/Downloads/gilafilmX.png"
+								},
+								{
+									"key": "price",
+									"value": "30000",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:3000/products/3"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/products/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get All Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/categories/"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/categories/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"minuman\",\r\n    \"description\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"cemilan\",\r\n    \"description\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"cemilan\",\r\n    \"description\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/categories/3"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "checkout",
+			"item": [
+				{
+					"name": "Add to Cart Product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"if(jsonData.orderId ) {\r",
+									"    postman.setEnvironmentVariable(\"cartId\", jsonData.orderId);\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 2,\r\n  \"items\": [\r\n    { \"productId\": 2, \"quantity\": 2 },\r\n    { \"productId\": 4, \"quantity\": 1 }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/cart/add"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/cart/{{cartId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cart Items",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/cart/{{cartId}}/item/10"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:3000/cart/{{cartId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"orderId\": \"{{cartId}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/cart/checkout"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
