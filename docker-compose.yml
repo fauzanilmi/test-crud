@@ -27,16 +27,25 @@ services:
     container_name: project-crud
     environment:
       PORT: ${PORT}
+      CHOKIDAR_USEPOLLING: "true"
     ports:
       - '3000:3000'
     depends_on:
       db:
         condition: service_healthy
     volumes:
-      - .:/app
       - /app/node_modules
     networks:
       - backend
+    develop:
+      watch:
+        - action: sync  
+          path: ./src  
+          target: /app/src
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json    
 
   pgadmin:
     image: dpage/pgadmin4:latest

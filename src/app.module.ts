@@ -3,23 +3,25 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { ProductsModule } from './products/products.module';
 import { CategoryModule } from './category/category.module';
+import { CartModule } from './cart/cart.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DATABASE_HOST,
-      port: +process.env.DATABASE_PORT,
-      username: process.env.DATABASE_USER,
-      password: process.env.DATABASE_PASSWORD,
-      database: process.env.DATABASE_NAME,
+      host: 'db',
+      port: +'5432',
+      username: 'postgres',
+      password: 'postgres',
+      database: 'convenience_store',
       entities: [],
       synchronize: true,
       autoLoadEntities: true,
     }),
     ProductsModule,
     CategoryModule,
+    CartModule,
   ],
 })
 export class AppModule {}
